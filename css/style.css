@@ -1,0 +1,880 @@
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    min-width: 350px;
+    overflow: scroll; 
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  color: #10223F;
+  overflow: scroll;
+  transition: background-color .5s;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  background: #323232;
+  height: 4em; /* 5.875em;   94px/16px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  padding: .5em 1em;
+  position: fixed;
+  width: 100%;
+}
+
+div.nav-placeholder {
+
+}
+
+h1 {
+  font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 3em 1em 0 1em;
+  text-align: center;
+  color: #323232;
+
+}
+
+h3 {
+  font-family: 'proxima_nova_altbold', Georgia, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #139377;
+  letter-spacing: .1em;
+  margin-bottom: 3.5em;
+  text-align: center;
+}
+
+h4 {
+   font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+   font-size: 1.5em;
+   margin: 1em 0 .2em 0;
+   /* text-align: center; */
+ }
+
+h5 {
+   font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+   font-size: 1.25em; /* 20/16px */
+   margin: 1em 0 .5em 0;
+ }
+
+h6 {
+   font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+   font-size: 1.25em;
+   color: #ffffff;
+   margin: 0em 0 1em 0;
+ }
+
+p {
+   line-height: 1.5em;
+   margin: 0 0 3em 0;
+ }
+
+img {
+   max-width: 100%;
+   height: auto;
+   margin: 0 auto;
+ }
+
+ button {
+   margin: 0 auto;
+   display: block ;
+   background-color: #17E8BA;
+   color: #323232;
+   padding: 18px 62px;
+   border-radius: 32px;
+   text-decoration: none;
+   border: none;
+   font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+   letter-spacing: 0.04em;
+   cursor: pointer;
+ }
+
+ button:focus {outline:0;}
+
+footer {
+   background-color: #323232;
+   margin-top: calc(100% -22em);
+ }
+
+ .fixed {
+   position: fixed;
+   top: 0;
+   width: 100%;
+ }
+
+
+ /* -----------------HAMBURGER & MENU--------------
+ ------------------------------------------------
+ ---------------------------------------------- */
+
+div.hamburger span.line {
+  width: 30px;
+  height: 2px;
+  display: block;
+  background-color: #ffffff;
+  margin: 8px auto;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+div.hamburger.is-active span.line:nth-child(2){
+  opacity: 0;
+}
+
+div.hamburger.is-active span.line:nth-child(1){
+  transform: translateY(10px) rotate(45deg);
+  -moz-transform: translateY(10px) rotate(45deg);
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+}
+
+div.hamburger.is-active span.line:nth-child(3){
+  transform: translateY(-10px) rotate(-45deg);
+  -moz-transform: translateY(-10px) rotate(-45deg);
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+}
+
+div.menu {
+  display: none;
+}
+
+div.mobile_menu {
+  display: none;
+  background-color: #323232;
+  margin-top: 4em;
+  transition: all .5s ease-in-out;
+  z-index: 5;
+}
+
+div.mobile_menu ul {
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+}
+
+div.mobile_menu ul li{
+  padding-bottom: 1em;
+}
+
+div.mobile_menu ul li a{
+  text-decoration: none;
+  color: #17E8BA;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+div.mobile_menu ul li a:hover {
+  border-bottom: none;
+}
+
+div.mobile_menu.open {
+  margin-bottom: -140px;
+  position: absolute;
+  width: 100%;
+}
+
+div.hamburger:hover {
+  cursor: pointer;
+}
+
+
+ /* -------------- END HAMBURGER MENU -------------------- */
+
+a.hotell {
+  cursor: pointer;
+  font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+  font-size: 1.25em;
+  color: #006699;
+  text-decoration: underline;
+  display: inline-block;
+  margin: 1em 0 .5em 0;
+}
+
+ /*  ------------------Pseudo classes links---------------*/
+
+a.hotell:link {
+  color: #17E8BA;
+  text-decoration: underline;
+}
+
+a.hotell:visited {
+  color: #17E8BA;
+  text-decoration: underline;
+}
+
+a.hotell:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: #17E8BA;
+}
+
+a.hotell:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #17E8BA;
+}
+
+a.hotell:active {
+  text-decoration: none;
+  cursor: pointer;
+  color: #17E8BA;
+}
+ /*  Pseudo classes links END   -------------------------  */
+
+.title_year {
+  font-family: 'proxima_nova_ltthin', Georgia, sans-serif;
+}
+
+  #main {
+    min-width: 100%;
+    /* padding-bottom: 22em; /*351px/16px*/ */
+  }
+
+  section#illustration {
+    background-image: url('../img/header.png'); */
+    background-color: green;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 0;
+    width: 100%;
+    padding: 80% 0 0 0;
+    z-index: 0;
+    position: relative;
+  }
+
+  header {
+    max-width: 34em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  section#pamelding {
+    margin: 0 auto;
+  }
+
+
+
+  div.img_text {
+    font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+    color: #FFFFFF;
+    max-width: 14em;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1em;
+    padding-bottom: 1em;
+    }
+
+  div.img_subtext {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  section.welcome_text {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    padding-bottom: 2em;
+  }
+
+ p.main_text_02 {
+    color: #000000;
+    margin: .5em 0 1.5em 0;
+  }
+
+  span.bold {
+    font-family: 'proxima_nova_altbold', Georgia, sans-serif;
+  }
+
+  section.color_bg {
+    background-color: #F7F7F7;
+    width: 100%;
+    padding: 1em 0 10em 0;
+
+  }
+
+  div.schedule_box {
+    width: 80%;
+    margin: 4em auto 0 auto;
+  }
+
+  div.schedule_header {
+    text-align: center;
+  }
+
+  p.schedule_daystitle {
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: .2em;
+    font-weight: 50;
+    color: #139377;
+    padding-bottom: 2em;
+    margin: 0;
+
+  }
+
+  img.cal_icon {
+    z-index: 0;
+    position: relative;
+    bottom: 1.5em;
+  }
+
+
+
+  div.timeframe div {
+    border-top: 1px solid #EEEBE4;
+    padding: 1em;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    padding-bottom: 1rem;
+  }
+
+  div span.schedule_time {
+    width: 2.75rem;
+    font-weight: 900;
+    text-align: right;
+    margin-right: 1em;
+  }
+
+  div.schedule_box {
+    background-color: #ffffff;
+    z-index: -1;
+  }
+
+  div.pictures_wrap01 {
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  img.picture_boat {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  p.boat_text {
+    font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+    font-size: 2em;
+    color: #17E8BA;
+    text-align: center;
+    margin: 30% 0;
+    width: 70%;
+  }
+
+
+  div.pictures_wrap02 {
+    position: ;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+  }
+
+  div.boat_text_wrap {
+    width: 16em;
+    display: block;
+  }
+
+  div.p_wrap {
+    height: 100%;
+  }
+
+  div.pictures_wrap03 {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  div.info_box {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /*  ------- FORM STYLING -----------------------------------*/
+
+
+div.form-style {
+    background-color: ;
+    padding: 1em;
+    margin: 1em;
+  }
+
+div.form-style form input,
+div.form-style form textarea  {
+  border: 1px solid #D1CEC7;
+  padding: 1em;
+  width: 17em;
+  margin: .5em;
+}
+
+div.form-style form input:focus,
+div.form-style form textarea:focus {
+  border: 2px solid #C2E6EF;
+  box-shadow: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #006699;
+  font-size: .8em;
+}
+
+form {
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+
+  /* -------- END OF FORM STYLING -----------------------------*/
+
+  div.hotel_01 {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  div.hotel_02 {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  img.arrow {
+    padding-left: .5em;
+  }
+
+  div.footer_wrap {
+    padding: 2em 0 2em 1em;
+  }
+
+  footer ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  footer ul li {
+    color: white;
+    list-style: none;
+    margin: 0 0 .3em 0;
+  }
+
+  footer ul li a {
+    color: #17E8BA;
+  }
+
+  footer ul li.footer_hdr {
+    margin: 1.5em 0 1em 0;
+  }
+
+  /* --------- PSEUDO ELEMENT FOR FOOTER links ---------- */
+
+  footer ul li a:link {
+
+  }
+
+  footer ul li a:visited {
+
+  }
+
+  footer ul li a:focus {
+
+  }
+
+  footer ul li a:hover {
+
+  }
+
+  footer ul li a:active {
+
+  }
+
+/* ------------------------ CLEARFIX */
+
+/* .clearfix:after {
+    content:" ";
+    display: block;
+    clear: both;
+} */
+
+/* } */
+/*  ---------- HAMBURGER MENU --------*/
+
+
+
+
+/*  ----------------MEDIA QUERIES----------------------------
+----------------------------------------------
+----------------------------------------------
+------------------------------------------------
+------------------------------------------------
+----------*/
+
+@media screen and (min-width: 768px) {
+
+
+  h1 {
+    font-size: 1.6em;
+    margin: 0;
+  }
+
+  h2 {
+    margin: 4em auto 0 auto;
+  }
+
+  h3 {
+    margin: 1em 0 4em 0;
+  }
+
+  header {
+    max-width: 22em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    height: 6em;
+    width: 100%;
+  }
+
+  nav ul {
+    padding: 0;
+    display: flex;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #17E8BA;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1em;
+    justify-content: flex-end;
+  }
+
+  nav ul li a:hover {
+    border-bottom: none;
+  }
+
+  /*
+  #main {
+      transition: margin-top .4s;
+      text-align:center;
+      margin:auto;
+      padding: 16px;
+      font-size:30px;
+
+  } */
+
+  div.menu {
+    display: block;
+  }
+
+  div.hamburger {
+    display: none;
+  }
+
+  div.wrp_schedule {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+
+section.welcome_text,
+#timeplan,
+.teaser_wrap,
+#hotel {
+  padding-bottom: 5em;
+}
+
+/*  ------- HEADER section ----------*/
+
+div.img_text {
+  font-size: 2.75em;
+  padding-bottom: 2em;
+}
+
+
+div.img_subtext {
+  font-size: 2em;
+}
+
+p.boat_sub_text {
+  margin-top: 40%;
+}
+
+
+/*  ------- START FLEXBOX teaser section ----------*/
+
+  div.pictures_wrap01,
+  div.pictures_wrap02,
+  div.pictures_wrap03 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  p.boat_text,
+  p.boat_sub_text  {
+    position: inherit;
+    margin: 0;
+  }
+
+  div.boat_text_wrap {
+    width: auto;
+  }
+
+  div.img_wrap01 {
+    order: 2;
+    flex: 130em;
+  }
+
+  div.text_wrap01 {
+    order: 1;
+    padding-right: 2em;
+    align-self: flex-start;
+    text-align: right;
+  }
+
+  div.boat_text_wrap {
+    order: 1;
+    /* position: relative; */
+    text-align: left;
+    width: auto;
+
+  }
+
+  div.img_wrap02 {
+    order: 2;
+    flex: 112em;
+    width: 100%;
+    /* position: relative; */
+    /* top: -5em;
+    left: -7em; */
+    padding-top: 2em;
+    display: flex;
+    align-items: space-between;
+
+  }
+
+  img.picture_boat {
+    max-width: 100%;
+  }
+
+  div.p_wrap {
+    order: 3;
+    align-self: start;
+    padding-top: 2em;
+    padding-left: 2em;
+  }
+
+  div.text_wrap02 {
+    order: 1;
+    text-align: right;
+    padding-right: 2em;
+  }
+
+  div.img_wrap03 {
+    order: 2;
+    flex: 130em;
+    margin-top: -8em;
+  }
+
+
+/*  ------- END teaser section ----------*/
+
+
+
+  div.info_box {
+    text-align: center;
+    max-width: 70%;
+  }
+
+  div.wrap_hotel {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  p.img_text {
+    font-size: 2em;
+  }
+
+  div.info_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  div.info_foo {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 1em;
+  }
+
+  p.main_text_02 {
+    margin: 0;
+  }
+
+  img.icon {
+    padding-right: 1em;
+  }
+
+  div.footer_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  div.footer_wrap h6 {
+    flex-grow: 2;
+  }
+
+  footer ul {
+    padding-right: 2em;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+
+  header {
+    max-width: 34em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  p.img_text {
+    font-size: 2.5em;
+  }
+
+  p.img_subtext {
+    font-size: 2em;
+  }
+
+  section#illustration {
+    padding-top: 60%;
+  }
+
+
+  section.welcome_text {
+    width: 58%;
+    margin: 0 auto 4em auto;
+    text-align: center;
+  }
+
+  section.schedule {
+    width: 100%;
+  }
+
+  div.wrp_schedule {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  div.schedule_box {
+    z-index: 0;
+    margin: 2em;
+  }
+
+  ul.timeframe {
+    text-decoration: none;
+  }
+
+  div.teaser_wrap {
+    width: 64%;
+    margin: 0 auto;
+  }
+
+  div.wrap_info {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  div.info_box {
+    text-align: left;
+    padding: 0 2em;
+  }
+
+  div.wrap_hotel {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+  }
+
+  div.hotel_01,
+  div.hotel_02 {
+    margin: 0 2em 2em 2em;
+  }
+}
+
+@media screen and (min-width: 1824px) {
+
+  section#illustration {
+    padding-top: 40%;
+  }
+
+  section.welcome_text {
+    width: 33%;
+  }
+
+  div.wrp_schedule {
+    width: 50%;
+  }
+
+  div.wrap_hotel {
+    width: 50%;
+  }
+
+  div.teaser_wrap {
+    width: 50%;
+  }
+
+
+
+
+
+
+}
